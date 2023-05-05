@@ -2,6 +2,8 @@
 
 require_once __DIR__ . './Models/Product.php';
 require_once __DIR__ . './Models/AnimalType.php';
+require_once __DIR__ . './Models/AnimalFood.php';
+require_once __DIR__ . './Models/AnimalKennel.php';
 require_once __DIR__ . './Models/Toy.php';
 
 $dog = new AnimalType('Dog');
@@ -32,6 +34,9 @@ $imac_kennel->size = "53 x 46 x 47,6 cm"
 <body>
     
 
+    <div class="container">
+        <?php echo $bouncing_ball->PrintToy()?>
+    </div>
 
 
 
