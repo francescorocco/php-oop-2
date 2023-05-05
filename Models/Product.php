@@ -6,7 +6,7 @@ require_once __DIR__ . '/Toy.php';
 
 class Product   {
 
-    public $class_type = 'Product';
+    public $class_type = 'Prodotto';
     public $name;
     public $animal_type;
     protected $price;

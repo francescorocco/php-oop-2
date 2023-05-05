@@ -29,13 +29,23 @@ $imac_kennel->size = "53 x 46 x 47,6 cm"
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Style.css"/>
     <title>e-commerce</title>
 </head>
 <body>
     
 
-    <div class="container">
-        <?php echo $bouncing_ball->PrintToy()?>
+    <div class="container d-flex">
+        <div class="col-4">
+            <?php echo $bouncing_ball->PrintToy()?>
+
+        </div>
+        <div class="col-4">
+            <?php echo $purina_premium->PrintFood()?>
+        </div>
+        <div class="col-4">
+            <?php echo $imac_kennel->PrintKennel()?>
+        </div>
     </div>
 
 
