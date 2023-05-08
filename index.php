@@ -47,27 +47,27 @@ $products =[
     <title>e-commerce</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <?php foreach($products as $product) {?>
                 <div class="col-4">
                     <div class="card" style="width: 18rem;">
                         <img src="<?php echo $product->image ?>" class="card-img-top" alt="<?php $product->name ?>"/>
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h3 class="card-title"><?php echo $product->name?></h3>
-                            <p class="card-text">Per: <?php echo $product->animal_type->name?></p>
-                            <p class="card-text">Tipologia:<?php echo $product->getClassName()?></p>
+                            <p class="card-text fs-3"><i class="<?php echo $product->animal_type->icon ?>"></i></p>
+                            <p class="card-text fst-italic">Tipologia: <?php echo $product->getClassName()?></p>
 
                             <?php if ($product->getClassName() == 'Toy') { ?>
-                                <p class="card-text">Colore:<?php echo $product->color?></p>
+                                <p class="card-text">Colore: <?php echo $product->color?></p>
                             <?php } else if($product->getClassName() == 'AnimalKennel') { ?>
-                                <p class="card-text">Grandezza:<?php echo $product->size?></p>
+                                <p class="card-text">Grandezza: <?php echo $product->size?></p>
                             <?php } else if($product->getClassName() == 'AnimalFood') { ?>
-                                <p class="card-text">Peso:<?php echo $product->weight?></p>
-                                <p class="card-text">Coposto da:<?php echo $product->composition?></p>
+                                <p class="card-text">Peso: <?php echo $product->weight?> Kg</p>
+                                <p class="card-text">Coposto da: <?php echo $product->composition?></p>
                             <?php } ?>
 
-                            <p class="card-text">Prezzo: <?php echo $product->price ?> €</p>
+                            <p class="card-text fw-bold">Prezzo: <?php echo $product->price ?> €</p>
                         </div>
                     </div>
                 </div>
