@@ -12,20 +12,4 @@ class Toy extends Product {
         parent::__construct($name, $price, $animal_type, $image);
         $this->color = $color;
     }
-    
-    public function PrintToy(){
-        return
-        '<div class="card" style="width: 18rem;">
-            <img src="' .$this->image.'" class="card-img-top" alt="'.$this->name.'">
-            <div class="card-body">
-                <h3 class="card-title">'.$this->name.'</h3>
-                <p class="card-text">'.$this->animal_type->name.'</p>
-                <p class="card-text">Tipologia: '.$this->class_type.'</p>
-                <p class="card-text">Colore: '.$this->color.'</p>
-                <p class="card-text">Materiale: '.$this->material.'</p>
-                <p class="card-text">Prezzo: '.$this->price.'€'.'</p>
-            </div>
-        </div>';
-    }
-
 }
