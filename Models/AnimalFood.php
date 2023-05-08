@@ -8,9 +8,15 @@ class AnimalFood extends Product {
     public $composition;
     public $weight;
 
-    public function __construct($name, $price, AnimalType $animal_type, $weight, $image){
+    public function __construct($name, $price, AnimalType $animal_type, $image){
         parent::__construct($name, $price, $animal_type, $image);
-        $this->weight = $weight;
     }
 
+    public function setWeight($weight){
+        if(!is_float($weight)){
+            throw new Exception('Il valore inserito deve essere un numero');
+        }else{
+            $this->weight = $weight;
+        }
+    }
 }

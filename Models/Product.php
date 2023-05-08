@@ -2,6 +2,8 @@
 require_once __DIR__ . '/AnimalType.php';
 require_once __DIR__ . '/AnimalKennel.php';
 require_once __DIR__ . '/Toy.php';
+require_once __DIR__ . './../Traits/Colorable.php';
+
 
 class Product
 {

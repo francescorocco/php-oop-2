@@ -5,6 +5,7 @@ require_once __DIR__ . './Models/AnimalType.php';
 require_once __DIR__ . './Models/AnimalFood.php';
 require_once __DIR__ . './Models/AnimalKennel.php';
 require_once __DIR__ . './Models/Toy.php';
+require_once __DIR__ . './Traits/Colorable.php';
 
 $dog = new AnimalType();
 $dog->name = 'Cane';
@@ -19,8 +20,9 @@ $cat->icon = 'fa-solid fa-cat';
 $bouncing_ball = new Toy('Palla rimbalzante', 3, $dog, 'Rosso', "https://m.media-amazon.com/images/I/61oaFtJA3GL._AC_SY355_.jpg");
 $bouncing_ball->material = "Plastic";
 
-$purina_premium = new AnimalFood('Purina Premium', 30, $cat, 5, "https://m.media-amazon.com/images/I/71t4mAxmqHL._AC_SL1500_.jpg");
+$purina_premium = new AnimalFood('Purina Premium', 30, $cat, "https://m.media-amazon.com/images/I/71t4mAxmqHL._AC_SL1500_.jpg");
 $purina_premium->composition = "Salmone";
+$purina_premium->setWeight(3.00);
 
 $imac_kennel = new AnimalKennel('Cuccia Zeus', 75, $dog, 'Verde', "https://m.media-amazon.com/images/I/51LEAsE-JxL._AC_SY355_.jpg");
 $imac_kennel->size = "53 x 46 x 47,6 cm";
@@ -61,6 +63,7 @@ $products =[
                             <?php if ($product->getClassName() == 'Toy') { ?>
                                 <p class="card-text">Colore: <?php echo $product->color?></p>
                             <?php } else if($product->getClassName() == 'AnimalKennel') { ?>
+                                <p class="card-text">Colore: <?php echo $product->color?></p>
                                 <p class="card-text">Grandezza: <?php echo $product->size?></p>
                             <?php } else if($product->getClassName() == 'AnimalFood') { ?>
                                 <p class="card-text">Peso: <?php echo $product->weight?> Kg</p>
@@ -83,4 +86,4 @@ $products =[
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
-</html>l
+</html>
